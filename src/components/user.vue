@@ -2,11 +2,11 @@
 </style>
 <template>
   <div>
+    <div>
+      <h1>user</h1>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 <script>
-  export default {
-
-  }
 </script>

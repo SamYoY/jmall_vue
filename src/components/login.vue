@@ -49,8 +49,8 @@
             <el-button type="primary" style="width: 100%;" @click="login('loginForm')">登录</el-button>
           </el-form-item>
           <el-form-item style="text-align: right;">
-              <el-button style="border: 0px;background:inherit;">忘记密码</el-button>
-              <el-button style="border: 0px;background:inherit;">免费注册</el-button>
+              <el-button style="border: 0px;background:inherit;" @click="retrieve()">忘记密码</el-button>
+              <el-button style="border: 0px;background:inherit;" @click="register()">免费注册</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -103,13 +103,19 @@
             LoginService.login(this.loginForm.username, this.loginForm.password).then((res) => {
               let ret = res.data;
               if(ret.code == 1){
-                this.$router.push("/main");
+                this.$router.push("/home");
               }
             });
           }else{
             return false;
           }
         });
+      },
+      retrieve(){
+        this.$router.push('/user/retrieve-password')
+      },
+      register(){
+        this.$router.push('/user/register')
       }
     }
   }

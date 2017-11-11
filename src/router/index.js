@@ -36,6 +36,30 @@ export default new Router({
       },
       component: (resolve) => require(['../components/user.vue'], resolve),
       children: UserRouter
+    },
+    {
+      path: "/list",
+      name: 'List',
+      meta: {
+
+      },
+      component:(resolve) => require(['../components/home/product/list'], resolve)
+    },
+    {
+      path: "/detail",
+      name: "Detail",
+      meta: {
+
+      },
+      component: (resolve) => require(['../components/home/product/detail'], resolve)
+    },
+    {
+      path: "/product",
+      name: "Product",
+      meta: {
+
+      },
+      component: (resolve) => require(['../components/home/product/product'], resolve)
     }
 
   ]

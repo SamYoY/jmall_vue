@@ -97,19 +97,20 @@
     },
     methods: {
       login(formName){
-        this.$refs[formName].validate((valid) => {
-          if(valid){
-            this.loading = true;
-            LoginService.login(this.loginForm.username, this.loginForm.password).then((res) => {
-              let ret = res.data;
-              if(ret.code == 1){
-                this.$router.push("/home");
-              }
-            });
-          }else{
-            return false;
-          }
-        });
+        this.$router.push("/home");
+        // this.$refs[formName].validate((valid) => {
+        //   if(valid){
+        //     this.loading = true;
+        //     LoginService.login(this.loginForm.username, this.loginForm.password).then((res) => {
+        //       let ret = res.data;
+        //       if(ret.code == 1){
+        //         this.$router.push("/home");
+        //       }
+        //     });
+        //   }else{
+        //     return false;
+        //   }
+        // });
       },
       retrieve(){
         this.$router.push('/user/retrieve-password')

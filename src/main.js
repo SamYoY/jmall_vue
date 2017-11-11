@@ -25,7 +25,7 @@ Axios.interceptors.request.use((config) => {
   config.url = "http://localhost:3000" + config.url;
   return config
 }, (err) => {
-  return Pormise.reject(err);
+  return Promise.reject(err);
 })
 
 new Vue({
